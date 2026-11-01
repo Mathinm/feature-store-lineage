@@ -1,0 +1,553 @@
+{
+  "attribute": "senior_citizen",
+  "reference_group": "0",
+  "mitigated_group": "1",
+  "n_fit": 3943,
+  "n_calibration": 1691,
+  "n_test": 1409,
+  "n_test_by_group": {
+    "0": 1180,
+    "1": 229
+  },
+  "protocol": "fit/cal split of training data; test used only for reporting",
+  "comparison_table": [
+    {
+      "method": "baseline_xgboost",
+      "threshold_1": 0.5,
+      "selection_rate_ref": 0.346,
+      "selection_rate_target": 0.668,
+      "fpr_ref": 0.226,
+      "fpr_target": 0.531,
+      "tpr_ref": 0.714,
+      "tpr_target": 0.905,
+      "disparate_impact_ratio": 0.518,
+      "equal_opportunity_diff": 0.191,
+      "average_odds_difference": 0.248,
+      "equalized_odds_difference": 0.305,
+      "roc_auc_effective": 0.831,
+      "roc_auc_degradation_vs_baseline": 0.0,
+      "f1": 0.605,
+      "recall": 0.757,
+      "precision": 0.504,
+      "di_95ci": [
+        0.459,
+        0.582
+      ],
+      "aod_95ci": [
+        0.185,
+        0.301
+      ]
+    },
+    {
+      "method": "threshold_equalized_odds",
+      "threshold_1": 0.73,
+      "selection_rate_ref": 0.346,
+      "selection_rate_target": 0.428,
+      "fpr_ref": 0.226,
+      "fpr_target": 0.276,
+      "tpr_ref": 0.714,
+      "tpr_target": 0.69,
+      "disparate_impact_ratio": 0.808,
+      "equal_opportunity_diff": 0.023,
+      "average_odds_difference": 0.037,
+      "equalized_odds_difference": 0.05,
+      "roc_auc_effective": 0.8246,
+      "roc_auc_degradation_vs_baseline": 0.0064,
+      "f1": 0.602,
+      "recall": 0.709,
+      "precision": 0.524,
+      "di_95ci": [
+        0.695,
+        0.975
+      ],
+      "aod_95ci": [
+        0.01,
+        0.104
+      ]
+    },
+    {
+      "method": "threshold_demographic_parity",
+      "threshold_1": 0.81,
+      "selection_rate_ref": 0.346,
+      "selection_rate_target": 0.332,
+      "fpr_ref": 0.226,
+      "fpr_target": 0.214,
+      "tpr_ref": 0.714,
+      "tpr_target": 0.536,
+      "disparate_impact_ratio": 0.96,
+      "equal_opportunity_diff": 0.178,
+      "average_odds_difference": 0.095,
+      "equalized_odds_difference": 0.178,
+      "roc_auc_effective": 0.8184,
+      "roc_auc_degradation_vs_baseline": 0.0126,
+      "f1": 0.587,
+      "recall": 0.674,
+      "precision": 0.521,
+      "di_95ci": [
+        0.769,
+        0.995
+      ],
+      "aod_95ci": [
+        0.048,
+        0.166
+      ]
+    },
+    {
+      "method": "reweighing",
+      "threshold_1": 0.5,
+      "selection_rate_ref": 0.357,
+      "selection_rate_target": 0.524,
+      "fpr_ref": 0.236,
+      "fpr_target": 0.372,
+      "tpr_ref": 0.728,
+      "tpr_target": 0.786,
+      "disparate_impact_ratio": 0.681,
+      "equal_opportunity_diff": 0.058,
+      "average_odds_difference": 0.097,
+      "equalized_odds_difference": 0.136,
+      "roc_auc_effective": 0.8286,
+      "roc_auc_degradation_vs_baseline": 0.0024,
+      "f1": 0.605,
+      "recall": 0.741,
+      "precision": 0.512,
+      "di_95ci": [
+        0.598,
+        0.801
+      ],
+      "aod_95ci": [
+        0.041,
+        0.154
+      ]
+    },
+    {
+      "method": "reweighing+threshold_eo",
+      "threshold_1": 0.6,
+      "selection_rate_ref": 0.357,
+      "selection_rate_target": 0.432,
+      "fpr_ref": 0.236,
+      "fpr_target": 0.283,
+      "tpr_ref": 0.728,
+      "tpr_target": 0.69,
+      "disparate_impact_ratio": 0.825,
+      "equal_opportunity_diff": 0.037,
+      "average_odds_difference": 0.042,
+      "equalized_odds_difference": 0.047,
+      "roc_auc_effective": 0.8241,
+      "roc_auc_degradation_vs_baseline": 0.007,
+      "f1": 0.602,
+      "recall": 0.719,
+      "precision": 0.517,
+      "di_95ci": [
+        0.706,
+        0.982
+      ],
+      "aod_95ci": [
+        0.016,
+        0.106
+      ]
+    }
+  ],
+  "details": [
+    {
+      "method": "baseline_xgboost",
+      "thresholds": {
+        "0": 0.5,
+        "1": 0.5
+      },
+      "note": "global threshold 0.5, fitted on FIT split",
+      "overall": {
+        "roc_auc_model": 0.8310186261592911,
+        "roc_auc_effective": 0.8310186261592911,
+        "f1": 0.6053475935828877,
+        "recall": 0.7566844919786097,
+        "precision": 0.5044563279857398,
+        "accuracy": 0.7381121362668559,
+        "positive_rate": 0.39815471965933286
+      },
+      "fairness_target": {
+        "selection_rate": {
+          "0": 0.34576271186440677,
+          "1": 0.6681222707423581
+        },
+        "tpr": {
+          "0": 0.7137931034482758,
+          "1": 0.9047619047619048
+        },
+        "fpr": {
+          "0": 0.2258426966292135,
+          "1": 0.5310344827586206
+        },
+        "disparate_impact_ratio": 0.5175141242937853,
+        "demographic_parity_diff": 0.3223595588779513,
+        "equal_opportunity_diff": 0.19096880131362892,
+        "average_odds_difference": 0.24808029372151802,
+        "equalized_odds_difference": 0.3051917861294071
+      },
+      "collateral": {
+        "gender": {
+          "disparate_impact_ratio": 0.994,
+          "demographic_parity_diff": 0.0024,
+          "equal_opportunity_diff": 0.0536,
+          "average_odds_difference": 0.0291,
+          "equalized_odds_difference": 0.0536
+        },
+        "senior_citizen": {
+          "disparate_impact_ratio": 0.5175,
+          "demographic_parity_diff": 0.3224,
+          "equal_opportunity_diff": 0.191,
+          "average_odds_difference": 0.2481,
+          "equalized_odds_difference": 0.3052
+        },
+        "partner": {
+          "disparate_impact_ratio": 0.5744,
+          "demographic_parity_diff": 0.2131,
+          "equal_opportunity_diff": 0.1492,
+          "average_odds_difference": 0.1532,
+          "equalized_odds_difference": 0.1572
+        },
+        "dependents": {
+          "disparate_impact_ratio": 0.4813,
+          "demographic_parity_diff": 0.243,
+          "equal_opportunity_diff": 0.14,
+          "average_odds_difference": 0.1662,
+          "equalized_odds_difference": 0.1924
+        }
+      },
+      "bootstrap_95ci": {
+        "disparate_impact_ratio": [
+          0.459,
+          0.582
+        ],
+        "equal_opportunity_diff": [
+          0.104,
+          0.268
+        ],
+        "average_odds_difference": [
+          0.185,
+          0.301
+        ]
+      }
+    },
+    {
+      "method": "threshold_equalized_odds",
+      "thresholds": {
+        "0": 0.5,
+        "1": 0.73
+      },
+      "note": "per-group threshold, TPR/FPR matched on calibration split",
+      "overall": {
+        "roc_auc_model": 0.8310186261592911,
+        "roc_auc_effective": 0.8246273476452504,
+        "f1": 0.6022727272727273,
+        "recall": 0.7085561497326203,
+        "precision": 0.5237154150197628,
+        "accuracy": 0.751596877217885,
+        "positive_rate": 0.35911994322214336
+      },
+      "fairness_target": {
+        "selection_rate": {
+          "0": 0.34576271186440677,
+          "1": 0.4279475982532751
+        },
+        "tpr": {
+          "0": 0.7137931034482758,
+          "1": 0.6904761904761905
+        },
+        "fpr": {
+          "0": 0.2258426966292135,
+          "1": 0.27586206896551724
+        },
+        "disparate_impact_ratio": 0.8079557246627465,
+        "demographic_parity_diff": 0.08218488638886834,
+        "equal_opportunity_diff": 0.02331691297208538,
+        "average_odds_difference": 0.03666814265419456,
+        "equalized_odds_difference": 0.05001937233630374
+      },
+      "collateral": {
+        "gender": {
+          "disparate_impact_ratio": 0.9478,
+          "demographic_parity_diff": 0.0192,
+          "equal_opportunity_diff": 0.0633,
+          "average_odds_difference": 0.0421,
+          "equalized_odds_difference": 0.0633
+        },
+        "senior_citizen": {
+          "disparate_impact_ratio": 0.808,
+          "demographic_parity_diff": 0.0822,
+          "equal_opportunity_diff": 0.0233,
+          "average_odds_difference": 0.0367,
+          "equalized_odds_difference": 0.05
+        },
+        "partner": {
+          "disparate_impact_ratio": 0.5124,
+          "demographic_parity_diff": 0.2288,
+          "equal_opportunity_diff": 0.1775,
+          "average_odds_difference": 0.1744,
+          "equalized_odds_difference": 0.1775
+        },
+        "dependents": {
+          "disparate_impact_ratio": 0.5236,
+          "demographic_parity_diff": 0.1984,
+          "equal_opportunity_diff": 0.0808,
+          "average_odds_difference": 0.1166,
+          "equalized_odds_difference": 0.1525
+        }
+      },
+      "bootstrap_95ci": {
+        "disparate_impact_ratio": [
+          0.695,
+          0.975
+        ],
+        "equal_opportunity_diff": [
+          0.002,
+          0.141
+        ],
+        "average_odds_difference": [
+          0.01,
+          0.104
+        ]
+      }
+    },
+    {
+      "method": "threshold_demographic_parity",
+      "thresholds": {
+        "0": 0.5,
+        "1": 0.81
+      },
+      "note": "per-group threshold, selection rate matched on calibration split",
+      "overall": {
+        "roc_auc_model": 0.8310186261592911,
+        "roc_auc_effective": 0.8183936552222997,
+        "f1": 0.5874125874125874,
+        "recall": 0.6737967914438503,
+        "precision": 0.5206611570247934,
+        "accuracy": 0.7487579843860894,
+        "positive_rate": 0.3435060326472676
+      },
+      "fairness_target": {
+        "selection_rate": {
+          "0": 0.34576271186440677,
+          "1": 0.3318777292576419
+        },
+        "tpr": {
+          "0": 0.7137931034482758,
+          "1": 0.5357142857142857
+        },
+        "fpr": {
+          "0": 0.2258426966292135,
+          "1": 0.21379310344827587
+        },
+        "disparate_impact_ratio": 0.9598424522647487,
+        "demographic_parity_diff": 0.01388498260676485,
+        "equal_opportunity_diff": 0.17807881773399015,
+        "average_odds_difference": 0.09506420545746389,
+        "equalized_odds_difference": 0.17807881773399015
+      },
+      "collateral": {
+        "gender": {
+          "disparate_impact_ratio": 0.9188,
+          "demographic_parity_diff": 0.029,
+          "equal_opportunity_diff": 0.0786,
+          "average_odds_difference": 0.0532,
+          "equalized_odds_difference": 0.0786
+        },
+        "senior_citizen": {
+          "disparate_impact_ratio": 0.9598,
+          "demographic_parity_diff": 0.0139,
+          "equal_opportunity_diff": 0.1781,
+          "average_odds_difference": 0.0951,
+          "equalized_odds_difference": 0.1781
+        },
+        "partner": {
+          "disparate_impact_ratio": 0.4984,
+          "demographic_parity_diff": 0.2271,
+          "equal_opportunity_diff": 0.1807,
+          "average_odds_difference": 0.1765,
+          "equalized_odds_difference": 0.1807
+        },
+        "dependents": {
+          "disparate_impact_ratio": 0.5452,
+          "demographic_parity_diff": 0.1799,
+          "equal_opportunity_diff": 0.0556,
+          "average_odds_difference": 0.0976,
+          "equalized_odds_difference": 0.1395
+        }
+      },
+      "bootstrap_95ci": {
+        "disparate_impact_ratio": [
+          0.769,
+          0.995
+        ],
+        "equal_opportunity_diff": [
+          0.062,
+          0.285
+        ],
+        "average_odds_difference": [
+          0.048,
+          0.166
+        ]
+      }
+    },
+    {
+      "method": "reweighing",
+      "thresholds": {
+        "0": 0.5,
+        "1": 0.5
+      },
+      "note": "Kamiran-Calders weights, global threshold 0.5",
+      "overall": {
+        "roc_auc_model": 0.828619959182619,
+        "roc_auc_effective": 0.828619959182619,
+        "f1": 0.6054644808743169,
+        "recall": 0.7406417112299465,
+        "precision": 0.512014787430684,
+        "accuracy": 0.7437899219304471,
+        "positive_rate": 0.38396025550035484
+      },
+      "fairness_target": {
+        "selection_rate": {
+          "0": 0.35677966101694913,
+          "1": 0.5240174672489083
+        },
+        "tpr": {
+          "0": 0.7275862068965517,
+          "1": 0.7857142857142857
+        },
+        "fpr": {
+          "0": 0.23595505617977527,
+          "1": 0.3724137931034483
+        },
+        "disparate_impact_ratio": 0.6808545197740112,
+        "demographic_parity_diff": 0.16723780623195916,
+        "equal_opportunity_diff": 0.058128078817733964,
+        "average_odds_difference": 0.0972934078707035,
+        "equalized_odds_difference": 0.13645873692367302
+      },
+      "collateral": {
+        "gender": {
+          "disparate_impact_ratio": 0.9525,
+          "demographic_parity_diff": 0.0186,
+          "equal_opportunity_diff": 0.064,
+          "average_odds_difference": 0.0421,
+          "equalized_odds_difference": 0.064
+        },
+        "senior_citizen": {
+          "disparate_impact_ratio": 0.6809,
+          "demographic_parity_diff": 0.1672,
+          "equal_opportunity_diff": 0.0581,
+          "average_odds_difference": 0.0973,
+          "equalized_odds_difference": 0.1365
+        },
+        "partner": {
+          "disparate_impact_ratio": 0.5466,
+          "demographic_parity_diff": 0.2227,
+          "equal_opportunity_diff": 0.1817,
+          "average_odds_difference": 0.1707,
+          "equalized_odds_difference": 0.1817
+        },
+        "dependents": {
+          "disparate_impact_ratio": 0.5226,
+          "demographic_parity_diff": 0.2127,
+          "equal_opportunity_diff": 0.1203,
+          "average_odds_difference": 0.1397,
+          "equalized_odds_difference": 0.1591
+        }
+      },
+      "bootstrap_95ci": {
+        "disparate_impact_ratio": [
+          0.598,
+          0.801
+        ],
+        "equal_opportunity_diff": [
+          0.005,
+          0.172
+        ],
+        "average_odds_difference": [
+          0.041,
+          0.154
+        ]
+      }
+    },
+    {
+      "method": "reweighing+threshold_eo",
+      "thresholds": {
+        "0": 0.5,
+        "1": 0.6
+      },
+      "note": "reweighed model + equalized-odds threshold",
+      "overall": {
+        "roc_auc_model": 0.828619959182619,
+        "roc_auc_effective": 0.8240628794337235,
+        "f1": 0.6017897091722595,
+        "recall": 0.7192513368983957,
+        "precision": 0.5173076923076924,
+        "accuracy": 0.7473385379701917,
+        "positive_rate": 0.36905606813342795
+      },
+      "fairness_target": {
+        "selection_rate": {
+          "0": 0.35677966101694913,
+          "1": 0.43231441048034935
+        },
+        "tpr": {
+          "0": 0.7275862068965517,
+          "1": 0.6904761904761905
+        },
+        "fpr": {
+          "0": 0.23595505617977527,
+          "1": 0.2827586206896552
+        },
+        "disparate_impact_ratio": 0.8252782057866803,
+        "demographic_parity_diff": 0.07553474946340022,
+        "equal_opportunity_diff": 0.03711001642036127,
+        "average_odds_difference": 0.04195679046512059,
+        "equalized_odds_difference": 0.04680356450987991
+      },
+      "collateral": {
+        "gender": {
+          "disparate_impact_ratio": 0.9223,
+          "demographic_parity_diff": 0.0298,
+          "equal_opportunity_diff": 0.0742,
+          "average_odds_difference": 0.0528,
+          "equalized_odds_difference": 0.0742
+        },
+        "senior_citizen": {
+          "disparate_impact_ratio": 0.8253,
+          "demographic_parity_diff": 0.0755,
+          "equal_opportunity_diff": 0.0371,
+          "average_odds_difference": 0.042,
+          "equalized_odds_difference": 0.0468
+        },
+        "partner": {
+          "disparate_impact_ratio": 0.5191,
+          "demographic_parity_diff": 0.2309,
+          "equal_opportunity_diff": 0.1943,
+          "average_odds_difference": 0.1813,
+          "equalized_odds_difference": 0.1943
+        },
+        "dependents": {
+          "disparate_impact_ratio": 0.5414,
+          "demographic_parity_diff": 0.1952,
+          "equal_opportunity_diff": 0.094,
+          "average_odds_difference": 0.1194,
+          "equalized_odds_difference": 0.1448
+        }
+      },
+      "bootstrap_95ci": {
+        "disparate_impact_ratio": [
+          0.706,
+          0.982
+        ],
+        "equal_opportunity_diff": [
+          0.002,
+          0.152
+        ],
+        "average_odds_difference": [
+          0.016,
+          0.106
+        ]
+      }
+    }
+  ],
+  "caveat": "Group-specific thresholds use the protected attribute at decision time; small target group => wide intervals."
+}

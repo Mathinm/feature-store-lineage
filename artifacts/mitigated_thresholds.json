@@ -1,0 +1,15 @@
+{
+  "attribute": "senior_citizen",
+  "equalized_odds": {
+    "0": 0.5,
+    "1": 0.73
+  },
+  "demographic_parity": {
+    "0": 0.5,
+    "1": 0.81
+  },
+  "reweighing_equalized_odds": {
+    "0": 0.5,
+    "1": 0.6
+  }
+}
