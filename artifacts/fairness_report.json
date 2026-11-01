@@ -1,0 +1,190 @@
+{
+  "with_sensitive": {
+    "gender": {
+      "groups": {
+        "Female": {
+          "n": 733,
+          "base_rate": 0.252387448840382,
+          "selection_rate": 0.39836289222373805,
+          "tpr_recall": 0.7837837837837838,
+          "fpr": 0.26824817518248173,
+          "roc_auc": 0.8373249161570329
+        },
+        "Male": {
+          "n": 676,
+          "base_rate": 0.27958579881656803,
+          "selection_rate": 0.39497041420118345,
+          "tpr_recall": 0.746031746031746,
+          "fpr": 0.2587268993839836,
+          "roc_auc": 0.8345392914181415
+        }
+      },
+      "demographic_parity_diff": 0.0033924780225546014,
+      "disparate_impact_ratio": 0.9914839507173544,
+      "equal_opportunity_diff": 0.037752037752037726
+    },
+    "senior_citizen": {
+      "groups": {
+        "0": {
+          "n": 1180,
+          "base_rate": 0.2457627118644068,
+          "selection_rate": 0.34576271186440677,
+          "tpr_recall": 0.7241379310344828,
+          "fpr": 0.22247191011235956,
+          "roc_auc": 0.8436478109259976
+        },
+        "1": {
+          "n": 229,
+          "base_rate": 0.36681222707423583,
+          "selection_rate": 0.6593886462882096,
+          "tpr_recall": 0.9047619047619048,
+          "fpr": 0.5172413793103449,
+          "roc_auc": 0.7809523809523808
+        }
+      },
+      "demographic_parity_diff": 0.3136259344238028,
+      "disparate_impact_ratio": 0.5243686160062858,
+      "equal_opportunity_diff": 0.180623973727422
+    },
+    "partner": {
+      "groups": {
+        "No": {
+          "n": 731,
+          "base_rate": 0.32558139534883723,
+          "selection_rate": 0.5006839945280438,
+          "tpr_recall": 0.8151260504201681,
+          "fpr": 0.3488843813387424,
+          "roc_auc": 0.8159058755347981
+        },
+        "Yes": {
+          "n": 678,
+          "base_rate": 0.20058997050147492,
+          "selection_rate": 0.28466076696165193,
+          "tpr_recall": 0.6764705882352942,
+          "fpr": 0.1863468634686347,
+          "roc_auc": 0.8405144345561103
+        }
+      },
+      "demographic_parity_diff": 0.21602322756639186,
+      "disparate_impact_ratio": 0.5685437722649387,
+      "equal_opportunity_diff": 0.1386554621848739
+    },
+    "dependents": {
+      "groups": {
+        "No": {
+          "n": 1001,
+          "base_rate": 0.3036963036963037,
+          "selection_rate": 0.4695304695304695,
+          "tpr_recall": 0.7894736842105263,
+          "fpr": 0.3299856527977044,
+          "roc_auc": 0.8084483311938383
+        },
+        "Yes": {
+          "n": 408,
+          "base_rate": 0.1715686274509804,
+          "selection_rate": 0.2181372549019608,
+          "tpr_recall": 0.6571428571428571,
+          "fpr": 0.12721893491124261,
+          "roc_auc": 0.8793322062552832
+        }
+      },
+      "demographic_parity_diff": 0.2513932146285087,
+      "disparate_impact_ratio": 0.46458594075928245,
+      "equal_opportunity_diff": 0.1323308270676692
+    }
+  },
+  "without_sensitive": {
+    "gender": {
+      "groups": {
+        "Female": {
+          "n": 733,
+          "base_rate": 0.252387448840382,
+          "selection_rate": 0.39017735334242837,
+          "tpr_recall": 0.7783783783783784,
+          "fpr": 0.2591240875912409,
+          "roc_auc": 0.839051094890511
+        },
+        "Male": {
+          "n": 676,
+          "base_rate": 0.27958579881656803,
+          "selection_rate": 0.41272189349112426,
+          "tpr_recall": 0.7619047619047619,
+          "fpr": 0.27720739219712526,
+          "roc_auc": 0.8363264995708528
+        }
+      },
+      "demographic_parity_diff": 0.02254454014869589,
+      "disparate_impact_ratio": 0.9453759529013677,
+      "equal_opportunity_diff": 0.01647361647361656
+    },
+    "senior_citizen": {
+      "groups": {
+        "0": {
+          "n": 1180,
+          "base_rate": 0.2457627118644068,
+          "selection_rate": 0.3593220338983051,
+          "tpr_recall": 0.7344827586206897,
+          "fpr": 0.23707865168539327,
+          "roc_auc": 0.8422200697404107
+        },
+        "1": {
+          "n": 229,
+          "base_rate": 0.36681222707423583,
+          "selection_rate": 0.6157205240174672,
+          "tpr_recall": 0.8928571428571429,
+          "fpr": 0.45517241379310347,
+          "roc_auc": 0.795648604269294
+        }
+      },
+      "demographic_parity_diff": 0.25639849011916216,
+      "disparate_impact_ratio": 0.5835797571823537,
+      "equal_opportunity_diff": 0.15837438423645323
+    },
+    "partner": {
+      "groups": {
+        "No": {
+          "n": 731,
+          "base_rate": 0.32558139534883723,
+          "selection_rate": 0.5088919288645691,
+          "tpr_recall": 0.8277310924369747,
+          "fpr": 0.35496957403651114,
+          "roc_auc": 0.819144493497196
+        },
+        "Yes": {
+          "n": 678,
+          "base_rate": 0.20058997050147492,
+          "selection_rate": 0.28466076696165193,
+          "tpr_recall": 0.6691176470588235,
+          "fpr": 0.1881918819188192,
+          "roc_auc": 0.8419524636422835
+        }
+      },
+      "demographic_parity_diff": 0.2242311619029172,
+      "disparate_impact_ratio": 0.5593737114219558,
+      "equal_opportunity_diff": 0.15861344537815125
+    },
+    "dependents": {
+      "groups": {
+        "No": {
+          "n": 1001,
+          "base_rate": 0.3036963036963037,
+          "selection_rate": 0.46553446553446554,
+          "tpr_recall": 0.7861842105263158,
+          "fpr": 0.32568149210903874,
+          "roc_auc": 0.8099231669561278
+        },
+        "Yes": {
+          "n": 408,
+          "base_rate": 0.1715686274509804,
+          "selection_rate": 0.2426470588235294,
+          "tpr_recall": 0.7,
+          "fpr": 0.14792899408284024,
+          "roc_auc": 0.8869399830938292
+        }
+      },
+      "demographic_parity_diff": 0.22288740671093613,
+      "disparate_impact_ratio": 0.5212225448119162,
+      "equal_opportunity_diff": 0.08618421052631586
+    }
+  }
+}

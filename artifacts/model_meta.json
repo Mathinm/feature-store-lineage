@@ -1,0 +1,154 @@
+{
+  "levels": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "senior_citizen": [
+      "0",
+      "1"
+    ],
+    "partner": [
+      "No",
+      "Yes"
+    ],
+    "dependents": [
+      "No",
+      "Yes"
+    ],
+    "phone_service": [
+      "No",
+      "Yes"
+    ],
+    "multiple_lines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "internet_service": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "online_security": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "online_backup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "device_protection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "tech_support": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "streaming_tv": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "streaming_movies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "paperless_billing": [
+      "No",
+      "Yes"
+    ],
+    "payment_method": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "columns": [
+    "gender_Female",
+    "gender_Male",
+    "senior_citizen_0",
+    "senior_citizen_1",
+    "partner_No",
+    "partner_Yes",
+    "dependents_No",
+    "dependents_Yes",
+    "phone_service_No",
+    "phone_service_Yes",
+    "multiple_lines_No",
+    "multiple_lines_No phone service",
+    "multiple_lines_Yes",
+    "internet_service_DSL",
+    "internet_service_Fiber optic",
+    "internet_service_No",
+    "online_security_No",
+    "online_security_No internet service",
+    "online_security_Yes",
+    "online_backup_No",
+    "online_backup_No internet service",
+    "online_backup_Yes",
+    "device_protection_No",
+    "device_protection_No internet service",
+    "device_protection_Yes",
+    "tech_support_No",
+    "tech_support_No internet service",
+    "tech_support_Yes",
+    "streaming_tv_No",
+    "streaming_tv_No internet service",
+    "streaming_tv_Yes",
+    "streaming_movies_No",
+    "streaming_movies_No internet service",
+    "streaming_movies_Yes",
+    "contract_Month-to-month",
+    "contract_One year",
+    "contract_Two year",
+    "paperless_billing_No",
+    "paperless_billing_Yes",
+    "payment_method_Bank transfer (automatic)",
+    "payment_method_Credit card (automatic)",
+    "payment_method_Electronic check",
+    "payment_method_Mailed check",
+    "tenure",
+    "monthly_charges",
+    "total_charges",
+    "avg_monthly_spend",
+    "num_addon_services"
+  ],
+  "features": [
+    "gender",
+    "senior_citizen",
+    "partner",
+    "dependents",
+    "phone_service",
+    "multiple_lines",
+    "internet_service",
+    "online_security",
+    "online_backup",
+    "device_protection",
+    "tech_support",
+    "streaming_tv",
+    "streaming_movies",
+    "contract",
+    "paperless_billing",
+    "payment_method",
+    "tenure",
+    "monthly_charges",
+    "total_charges",
+    "avg_monthly_spend",
+    "num_addon_services"
+  ],
+  "feature_service": "churn_model_v1",
+  "threshold": 0.5
+}

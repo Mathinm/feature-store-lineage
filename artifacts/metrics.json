@@ -1,0 +1,43 @@
+{
+  "all_features": {
+    "roc_auc": 0.8352049910873439,
+    "f1": 0.6130760986066452,
+    "recall": 0.7647058823529411,
+    "precision": 0.5116279069767442,
+    "threshold": 0.5
+  },
+  "n_train": 5634,
+  "n_test": 1409,
+  "churn_rate_train": 0.2653532126375577,
+  "without_sensitive": {
+    "roc_auc": 0.8373659872381101,
+    "f1": 0.6134185303514377,
+    "recall": 0.7700534759358288,
+    "precision": 0.5097345132743363,
+    "threshold": 0.5
+  },
+  "top_features": {
+    "contract_Month-to-month": 0.34937208890914917,
+    "internet_service_Fiber optic": 0.12216803431510925,
+    "tech_support_No": 0.06019166111946106,
+    "online_security_No": 0.04280012473464012,
+    "internet_service_DSL": 0.028569981455802917,
+    "contract_Two year": 0.024202432483434677,
+    "streaming_movies_Yes": 0.02117493562400341,
+    "phone_service_Yes": 0.020375899970531464,
+    "online_security_No internet service": 0.02012036181986332,
+    "tenure": 0.01849467307329178
+  },
+  "online_latency_ms": {
+    "backend": "redis",
+    "single_p50": 20.181792499997186,
+    "single_p95": 32.4145673000032,
+    "batch100_p50": 24.475830500001905
+  },
+  "online_offline_parity": {
+    "entities": 1409,
+    "mismatching_features": {},
+    "pass": true
+  },
+  "online_offline_prediction_max_abs_diff": 0.0
+}
