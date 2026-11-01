@@ -1,0 +1,254 @@
+{
+  "scenario": "distribution_drift",
+  "generated_at": "2026-10-24T15:59:57+00:00",
+  "baseline_rows": 5634,
+  "live_rows": 1200,
+  "thresholds": {
+    "psi_stable": 0.1,
+    "psi_severe": 0.2,
+    "alpha": 0.01,
+    "min_effect": 0.1
+  },
+  "overall_status": "FAIL",
+  "schema_issues": [],
+  "features": {
+    "gender": {
+      "kind": "categorical",
+      "psi": 0.0043,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 4.094698,
+      "p_value": 0.043018,
+      "effect_size": 0.024478,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "senior_citizen": {
+      "kind": "categorical",
+      "psi": 0.0,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "effect_size": 0.0,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "partner": {
+      "kind": "categorical",
+      "psi": 0.0001,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.085827,
+      "p_value": 0.769551,
+      "effect_size": 0.003544,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "dependents": {
+      "kind": "categorical",
+      "psi": 0.0007,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.632734,
+      "p_value": 0.426354,
+      "effect_size": 0.009622,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "phone_service": {
+      "kind": "categorical",
+      "psi": 0.0001,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.10961,
+      "p_value": 0.740589,
+      "effect_size": 0.004005,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "multiple_lines": {
+      "kind": "categorical",
+      "psi": 0.0018,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 1.74789,
+      "p_value": 0.417302,
+      "effect_size": 0.015993,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "internet_service": {
+      "kind": "categorical",
+      "psi": 0.0057,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.46376,
+      "p_value": 0.065097,
+      "effect_size": 0.028275,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "online_security": {
+      "kind": "categorical",
+      "psi": 0.0056,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.386515,
+      "p_value": 0.06766,
+      "effect_size": 0.028075,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "online_backup": {
+      "kind": "categorical",
+      "psi": 0.0057,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.502993,
+      "p_value": 0.063832,
+      "effect_size": 0.028377,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "device_protection": {
+      "kind": "categorical",
+      "psi": 0.0059,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.622045,
+      "p_value": 0.060143,
+      "effect_size": 0.028682,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "tech_support": {
+      "kind": "categorical",
+      "psi": 0.009,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 8.852437,
+      "p_value": 0.01196,
+      "effect_size": 0.035991,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "streaming_tv": {
+      "kind": "categorical",
+      "psi": 0.0058,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.554805,
+      "p_value": 0.0622,
+      "effect_size": 0.02851,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "streaming_movies": {
+      "kind": "categorical",
+      "psi": 0.006,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.709852,
+      "p_value": 0.05756,
+      "effect_size": 0.028905,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "contract": {
+      "kind": "categorical",
+      "psi": 0.0019,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 1.876746,
+      "p_value": 0.391264,
+      "effect_size": 0.016572,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "paperless_billing": {
+      "kind": "categorical",
+      "psi": 0.0023,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 2.157234,
+      "p_value": 0.1419,
+      "effect_size": 0.017767,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "payment_method": {
+      "kind": "categorical",
+      "psi": 0.1647,
+      "psi_level": "moderate",
+      "test": "chi2_contingency",
+      "statistic": 169.149299,
+      "p_value": 0.0,
+      "effect_size": 0.157325,
+      "stat_alert": true,
+      "status": "WARN"
+    },
+    "tenure": {
+      "kind": "continuous",
+      "psi": 0.3071,
+      "psi_level": "severe",
+      "test": "ks_2samp",
+      "statistic": 0.258763,
+      "p_value": 0.0,
+      "effect_size": 0.258763,
+      "stat_alert": true,
+      "status": "FAIL"
+    },
+    "monthly_charges": {
+      "kind": "continuous",
+      "psi": 0.9628,
+      "psi_level": "severe",
+      "test": "ks_2samp",
+      "statistic": 0.27426,
+      "p_value": 0.0,
+      "effect_size": 0.27426,
+      "stat_alert": true,
+      "status": "FAIL"
+    },
+    "total_charges": {
+      "kind": "continuous",
+      "psi": 0.1292,
+      "psi_level": "moderate",
+      "test": "ks_2samp",
+      "statistic": 0.170116,
+      "p_value": 0.0,
+      "effect_size": 0.170116,
+      "stat_alert": true,
+      "status": "WARN"
+    },
+    "avg_monthly_spend": {
+      "kind": "continuous",
+      "psi": 0.1311,
+      "psi_level": "moderate",
+      "test": "ks_2samp",
+      "statistic": 0.10952,
+      "p_value": 0.0,
+      "effect_size": 0.10952,
+      "stat_alert": true,
+      "status": "WARN"
+    },
+    "num_addon_services": {
+      "kind": "continuous",
+      "psi": 0.0095,
+      "psi_level": "stable",
+      "test": "ks_2samp",
+      "statistic": 0.035662,
+      "p_value": 0.157058,
+      "effect_size": 0.035662,
+      "stat_alert": false,
+      "status": "PASS"
+    }
+  },
+  "alerts": [
+    "payment_method: WARN (PSI=0.1647, chi2_contingency p=0.0)",
+    "tenure: FAIL (PSI=0.3071, ks_2samp p=0.0)",
+    "monthly_charges: FAIL (PSI=0.9628, ks_2samp p=0.0)",
+    "total_charges: WARN (PSI=0.1292, ks_2samp p=0.0)",
+    "avg_monthly_spend: WARN (PSI=0.1311, ks_2samp p=0.0)"
+  ]
+}

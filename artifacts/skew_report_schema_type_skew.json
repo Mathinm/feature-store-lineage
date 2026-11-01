@@ -1,0 +1,286 @@
+{
+  "scenario": "schema_type_skew",
+  "generated_at": "2026-10-24T15:59:57+00:00",
+  "baseline_rows": 5634,
+  "live_rows": 1200,
+  "thresholds": {
+    "psi_stable": 0.1,
+    "psi_severe": 0.2,
+    "alpha": 0.01,
+    "min_effect": 0.1
+  },
+  "overall_status": "FAIL",
+  "schema_issues": [
+    {
+      "feature": "senior_citizen",
+      "issue": "dtype_mismatch",
+      "expected": "int64",
+      "actual": "object",
+      "unparseable_values": 1200,
+      "examples": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "feature": "total_charges",
+      "issue": "dtype_mismatch",
+      "expected": "float64",
+      "actual": "object",
+      "unparseable_values": 130,
+      "examples": [
+        "<space>"
+      ]
+    }
+  ],
+  "features": {
+    "gender": {
+      "kind": "categorical",
+      "psi": 0.0043,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 4.094698,
+      "p_value": 0.043018,
+      "effect_size": 0.024478,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "senior_citizen": {
+      "kind": "categorical",
+      "psi": 17.5319,
+      "psi_level": "severe",
+      "test": "chi2_contingency",
+      "statistic": 6834.0,
+      "p_value": 0.0,
+      "effect_size": 1.0,
+      "stat_alert": true,
+      "status": "FAIL"
+    },
+    "partner": {
+      "kind": "categorical",
+      "psi": 0.0001,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.085827,
+      "p_value": 0.769551,
+      "effect_size": 0.003544,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "dependents": {
+      "kind": "categorical",
+      "psi": 0.0007,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.632734,
+      "p_value": 0.426354,
+      "effect_size": 0.009622,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "phone_service": {
+      "kind": "categorical",
+      "psi": 0.0001,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 0.10961,
+      "p_value": 0.740589,
+      "effect_size": 0.004005,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "multiple_lines": {
+      "kind": "categorical",
+      "psi": 0.0018,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 1.74789,
+      "p_value": 0.417302,
+      "effect_size": 0.015993,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "internet_service": {
+      "kind": "categorical",
+      "psi": 0.0057,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.46376,
+      "p_value": 0.065097,
+      "effect_size": 0.028275,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "online_security": {
+      "kind": "categorical",
+      "psi": 0.0056,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.386515,
+      "p_value": 0.06766,
+      "effect_size": 0.028075,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "online_backup": {
+      "kind": "categorical",
+      "psi": 0.0057,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.502993,
+      "p_value": 0.063832,
+      "effect_size": 0.028377,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "device_protection": {
+      "kind": "categorical",
+      "psi": 0.0059,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.622045,
+      "p_value": 0.060143,
+      "effect_size": 0.028682,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "tech_support": {
+      "kind": "categorical",
+      "psi": 0.009,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 8.852437,
+      "p_value": 0.01196,
+      "effect_size": 0.035991,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "streaming_tv": {
+      "kind": "categorical",
+      "psi": 0.0058,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.554805,
+      "p_value": 0.0622,
+      "effect_size": 0.02851,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "streaming_movies": {
+      "kind": "categorical",
+      "psi": 0.006,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 5.709852,
+      "p_value": 0.05756,
+      "effect_size": 0.028905,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "contract": {
+      "kind": "categorical",
+      "psi": 0.0019,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 1.876746,
+      "p_value": 0.391264,
+      "effect_size": 0.016572,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "paperless_billing": {
+      "kind": "categorical",
+      "psi": 0.0023,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 2.157234,
+      "p_value": 0.1419,
+      "effect_size": 0.017767,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "payment_method": {
+      "kind": "categorical",
+      "psi": 0.0012,
+      "psi_level": "stable",
+      "test": "chi2_contingency",
+      "statistic": 1.218205,
+      "p_value": 0.748641,
+      "effect_size": 0.013351,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "tenure": {
+      "kind": "continuous",
+      "psi": 0.0168,
+      "psi_level": "stable",
+      "test": "ks_2samp",
+      "statistic": 0.040527,
+      "p_value": 0.075164,
+      "effect_size": 0.040527,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "monthly_charges": {
+      "kind": "continuous",
+      "psi": 0.0208,
+      "psi_level": "stable",
+      "test": "ks_2samp",
+      "statistic": 0.044873,
+      "p_value": 0.035935,
+      "effect_size": 0.044873,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "total_charges": {
+      "kind": "continuous",
+      "psi": 0.2411,
+      "psi_level": "severe",
+      "test": "ks_2samp",
+      "statistic": 0.128255,
+      "p_value": 0.0,
+      "effect_size": 0.128255,
+      "stat_alert": true,
+      "status": "FAIL"
+    },
+    "avg_monthly_spend": {
+      "kind": "continuous",
+      "psi": 0.0274,
+      "psi_level": "stable",
+      "test": "ks_2samp",
+      "statistic": 0.047668,
+      "p_value": 0.021489,
+      "effect_size": 0.047668,
+      "stat_alert": false,
+      "status": "PASS"
+    },
+    "num_addon_services": {
+      "kind": "continuous",
+      "psi": 0.0095,
+      "psi_level": "stable",
+      "test": "ks_2samp",
+      "statistic": 0.035662,
+      "p_value": 0.157058,
+      "effect_size": 0.035662,
+      "stat_alert": false,
+      "status": "PASS"
+    }
+  },
+  "alerts": [
+    "senior_citizen: FAIL (PSI=17.5319, chi2_contingency p=0.0)",
+    "total_charges: FAIL (PSI=0.2411, ks_2samp p=0.0)",
+    "schema: senior_citizen -> dtype_mismatch {'expected': 'int64', 'actual': 'object', 'unparseable_values': 1200, 'examples': ['No', 'Yes']}",
+    "schema: total_charges -> dtype_mismatch {'expected': 'float64', 'actual': 'object', 'unparseable_values': 130, 'examples': ['<space>']}"
+  ],
+  "after_naive_coercion": {
+    "kind": "continuous",
+    "psi": 0.328,
+    "psi_level": "severe",
+    "test": "ks_2samp",
+    "statistic": 0.150984,
+    "p_value": 0.0,
+    "effect_size": 0.150984,
+    "stat_alert": true,
+    "status": "FAIL"
+  }
+}
