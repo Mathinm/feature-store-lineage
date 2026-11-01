@@ -1,0 +1,262 @@
+{
+  "environment": {
+    "redis_url": "redis://localhost:6379/0",
+    "redis_version": "7.0.15",
+    "redis_os": "Linux 6.18.44-fc-v153 x86_64",
+    "in_docker_container": false,
+    "python": "3.12.3",
+    "cpu_count": 1,
+    "machine": "x86_64",
+    "timestamp_utc": "2026-10-24T15:52:12+00:00"
+  },
+  "serving_latency": {
+    "single_entity_ms": {
+      "p50": 3.387,
+      "p95": 5.684,
+      "p99": 6.449,
+      "mean": 3.773,
+      "n": 1000
+    },
+    "batch_1_ms": {
+      "p50": 5.187,
+      "p95": 5.659,
+      "p99": 5.825,
+      "mean": 4.502,
+      "n": 60,
+      "per_entity_p50_us": 5187.0
+    },
+    "batch_10_ms": {
+      "p50": 5.193,
+      "p95": 7.135,
+      "p99": 8.618,
+      "mean": 5.435,
+      "n": 60,
+      "per_entity_p50_us": 519.3
+    },
+    "batch_100_ms": {
+      "p50": 25.132,
+      "p95": 48.929,
+      "p99": 85.771,
+      "mean": 31.48,
+      "n": 60,
+      "per_entity_p50_us": 251.3
+    },
+    "batch_1000_ms": {
+      "p50": 362.547,
+      "p95": 537.591,
+      "p99": 543.649,
+      "mean": 380.967,
+      "n": 20,
+      "per_entity_p50_us": 362.5
+    },
+    "raw_redis_ping_ms": {
+      "p50": 0.058,
+      "p95": 0.109,
+      "p99": 0.139,
+      "mean": 0.062,
+      "n": 2000
+    },
+    "features_per_request": 21,
+    "keys_in_db": 7043
+  },
+  "scale_test": [
+    {
+      "multiplier": 1,
+      "entities": 7043,
+      "parquet_bytes_total": 467899,
+      "parquet_bytes_by_view": {
+        "demographics": 108824,
+        "services": 127027,
+        "billing": 232048
+      },
+      "records_materialized": 21129,
+      "materialize_seconds": 2.36,
+      "throughput_records_per_sec": 8953,
+      "throughput_entities_per_sec": 2984,
+      "redis_keys": 7043,
+      "redis_used_memory_mb": 4.1,
+      "redis_bytes_per_entity": 585,
+      "online_latency": {
+        "single_entity_ms": {
+          "p50": 8.268,
+          "p95": 12.662,
+          "p99": 13.27,
+          "mean": 8.9,
+          "n": 1000
+        },
+        "batch_1_ms": {
+          "p50": 12.033,
+          "p95": 13.85,
+          "p99": 15.382,
+          "mean": 11.524,
+          "n": 40,
+          "per_entity_p50_us": 12033.2
+        },
+        "batch_100_ms": {
+          "p50": 41.656,
+          "p95": 54.583,
+          "p99": 55.012,
+          "mean": 42.918,
+          "n": 40,
+          "per_entity_p50_us": 416.6
+        }
+      }
+    },
+    {
+      "multiplier": 5,
+      "entities": 35215,
+      "parquet_bytes_total": 1858263,
+      "parquet_bytes_by_view": {
+        "demographics": 500066,
+        "services": 567497,
+        "billing": 790700
+      },
+      "records_materialized": 105645,
+      "materialize_seconds": 11.89,
+      "throughput_records_per_sec": 8885,
+      "throughput_entities_per_sec": 2962,
+      "redis_keys": 35215,
+      "redis_used_memory_mb": 20.7,
+      "redis_bytes_per_entity": 589,
+      "online_latency": {
+        "single_entity_ms": {
+          "p50": 8.497,
+          "p95": 12.064,
+          "p99": 14.113,
+          "mean": 9.171,
+          "n": 1000
+        },
+        "batch_1_ms": {
+          "p50": 8.132,
+          "p95": 11.643,
+          "p99": 11.723,
+          "mean": 8.841,
+          "n": 40,
+          "per_entity_p50_us": 8131.5
+        },
+        "batch_100_ms": {
+          "p50": 32.059,
+          "p95": 44.059,
+          "p99": 46.704,
+          "mean": 33.341,
+          "n": 40,
+          "per_entity_p50_us": 320.6
+        }
+      }
+    },
+    {
+      "multiplier": 15,
+      "entities": 105645,
+      "parquet_bytes_total": 4964119,
+      "parquet_bytes_by_view": {
+        "demographics": 1382131,
+        "services": 1509717,
+        "billing": 2072271
+      },
+      "records_materialized": 316935,
+      "materialize_seconds": 35.31,
+      "throughput_records_per_sec": 8976,
+      "throughput_entities_per_sec": 2992,
+      "redis_keys": 105645,
+      "redis_used_memory_mb": 61.7,
+      "redis_bytes_per_entity": 584,
+      "online_latency": {
+        "single_entity_ms": {
+          "p50": 7.783,
+          "p95": 12.508,
+          "p99": 14.236,
+          "mean": 8.546,
+          "n": 1000
+        },
+        "batch_1_ms": {
+          "p50": 7.371,
+          "p95": 8.189,
+          "p99": 8.501,
+          "mean": 7.387,
+          "n": 40,
+          "per_entity_p50_us": 7371.4
+        },
+        "batch_100_ms": {
+          "p50": 35.154,
+          "p95": 56.034,
+          "p99": 56.992,
+          "mean": 39.616,
+          "n": 40,
+          "per_entity_p50_us": 351.5
+        }
+      }
+    },
+    {
+      "multiplier": 30,
+      "entities": 211290,
+      "parquet_bytes_total": 9367372,
+      "parquet_bytes_by_view": {
+        "demographics": 2637384,
+        "services": 2816259,
+        "billing": 3913729
+      },
+      "records_materialized": 633870,
+      "materialize_seconds": 63.41,
+      "throughput_records_per_sec": 9996,
+      "throughput_entities_per_sec": 3332,
+      "redis_keys": 211290,
+      "redis_used_memory_mb": 123.4,
+      "redis_bytes_per_entity": 584,
+      "online_latency": {
+        "single_entity_ms": {
+          "p50": 7.887,
+          "p95": 12.368,
+          "p99": 13.914,
+          "mean": 8.557,
+          "n": 1000
+        },
+        "batch_1_ms": {
+          "p50": 7.569,
+          "p95": 8.911,
+          "p99": 9.187,
+          "mean": 7.718,
+          "n": 40,
+          "per_entity_p50_us": 7568.9
+        },
+        "batch_100_ms": {
+          "p50": 32.195,
+          "p95": 47.212,
+          "p99": 49.522,
+          "mean": 35.15,
+          "n": 40,
+          "per_entity_p50_us": 322.0
+        }
+      }
+    }
+  ],
+  "parallel_loading": {
+    "multiplier": 30,
+    "cpu_count": 1,
+    "runs": [
+      {
+        "workers": 1,
+        "records": 633870,
+        "seconds": 63.16,
+        "throughput_records_per_sec": 10036,
+        "redis_keys": 211290,
+        "includes_worker_startup_and_parquet_read": true
+      },
+      {
+        "workers": 2,
+        "records": 633870,
+        "seconds": 68.92,
+        "throughput_records_per_sec": 9197,
+        "redis_keys": 211290,
+        "includes_worker_startup_and_parquet_read": true
+      },
+      {
+        "workers": 4,
+        "records": 633870,
+        "seconds": 79.99,
+        "throughput_records_per_sec": 7925,
+        "redis_keys": 211290,
+        "includes_worker_startup_and_parquet_read": true
+      }
+    ]
+  }
+}
