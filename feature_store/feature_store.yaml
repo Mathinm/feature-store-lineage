@@ -1,0 +1,12 @@
+# Declarative config for the Feast CLI (`feast -c feature_store apply|ui`), used inside Docker Compose.
+# The Python scripts build an equivalent RepoConfig in common.get_store() so they also run locally with SQLite.
+project: telco_churn_fs
+provider: local
+registry: ../data/registry.db        # file registry (relative to this directory)
+online_store:                        # low-latency key-value store
+  type: redis
+  redis_type: redis
+  connection_string: "redis:6379"    # docker-compose service name
+offline_store:                       # batch store: Parquet files written by ingest_data.py (DuckDB builds them)
+  type: file
+entity_key_serialization_version: 2
