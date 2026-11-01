@@ -1,0 +1,61 @@
+# One command reproduces the whole study:   docker compose up --build
+#   redis          -> Feast ONLINE store (low-latency key-value)
+#   feature-store  -> runs ingest -> materialize -> train/serve -> skew detection -> lineage, then exits
+#   jupyter        -> notebooks/results.ipynb at http://localhost:8889/?token=capstone
+#   feast-ui       -> (optional profile) Feast registry/lineage UI at http://localhost:8890 :  docker compose --profile ui up
+x-app: &app
+  build: .
+  image: telco-feature-store:latest
+  environment: &env
+    FEAST_ONLINE: redis
+    REDIS_CONNECTION: redis:6379
+    FEAST_USAGE: "False"
+  volumes:
+    - ./data:/app/data
+    - ./artifacts:/app/artifacts
+    - ./docs:/app/docs
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: fsl-redis
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  feature-store:
+    <<: *app
+    container_name: fsl-pipeline
+    depends_on:
+      redis: { condition: service_healthy }
+    command: >
+      bash -c "python ingest_data.py &&
+               python materialize.py &&
+               python train_and_serve.py &&
+               python skew_detection.py --scenario all &&
+               python fairness_mitigation.py &&
+               python benchmark_and_scale.py --redis redis://redis:6379/0 &&
+               python lineage.py &&
+               python -m pytest -q tests"
+
+  jupyter:
+    <<: *app
+    container_name: fsl-jupyter
+    depends_on:
+      feature-store: { condition: service_completed_successfully }
+    ports: ["8889:8888"]
+    command: >
+      jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+      --ServerApp.token=capstone --notebook-dir=/app
+
+  feast-ui:
+    <<: *app
+    container_name: fsl-feast-ui
+    profiles: ["ui"]
+    depends_on:
+      feature-store: { condition: service_completed_successfully }
+    ports: ["8890:8888"]
+    command: feast -c feature_store ui -h 0.0.0.0 -p 8888
