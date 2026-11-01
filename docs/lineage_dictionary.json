@@ -1,0 +1,387 @@
+[
+  {
+    "feature": "gender",
+    "feature_view": "customer_demographics",
+    "dtype": "String",
+    "source_table": "raw_telco_customer",
+    "source_columns": [
+      "gender"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "demographic",
+    "pii_tag": "none",
+    "fairness_audit": "required",
+    "offline_source": "demographics.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "senior_citizen",
+    "feature_view": "customer_demographics",
+    "dtype": "Int64",
+    "source_table": "raw_telco_customer",
+    "source_columns": [
+      "SeniorCitizen"
+    ],
+    "transformation": "CAST to BIGINT (0/1)",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "demographic",
+    "pii_tag": "none",
+    "fairness_audit": "required",
+    "offline_source": "demographics.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "partner",
+    "feature_view": "customer_demographics",
+    "dtype": "String",
+    "source_table": "raw_telco_customer",
+    "source_columns": [
+      "Partner"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "demographic",
+    "pii_tag": "none",
+    "fairness_audit": "required",
+    "offline_source": "demographics.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "dependents",
+    "feature_view": "customer_demographics",
+    "dtype": "String",
+    "source_table": "raw_telco_customer",
+    "source_columns": [
+      "Dependents"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "demographic",
+    "pii_tag": "none",
+    "fairness_audit": "required",
+    "offline_source": "demographics.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "phone_service",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "PhoneService"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "multiple_lines",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "MultipleLines"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "internet_service",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "InternetService"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "online_security",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "OnlineSecurity"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "online_backup",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "OnlineBackup"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "device_protection",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "DeviceProtection"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "tech_support",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "TechSupport"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "streaming_tv",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "StreamingTV"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "streaming_movies",
+    "feature_view": "customer_services",
+    "dtype": "String",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "StreamingMovies"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "num_addon_services",
+    "feature_view": "customer_services",
+    "dtype": "Int64",
+    "source_table": "raw_telco_services",
+    "source_columns": [
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies"
+    ],
+    "transformation": "Sum of (col = 'Yes') over the six add-on columns -> 0..6",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "services.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "tenure",
+    "feature_view": "customer_billing",
+    "dtype": "Int64",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "tenure"
+    ],
+    "transformation": "CAST to BIGINT",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "contract",
+    "feature_view": "customer_billing",
+    "dtype": "String",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "Contract"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "paperless_billing",
+    "feature_view": "customer_billing",
+    "dtype": "String",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "PaperlessBilling"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "none",
+    "pii_tag": "none",
+    "fairness_audit": "not_required",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "payment_method",
+    "feature_view": "customer_billing",
+    "dtype": "String",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "PaymentMethod"
+    ],
+    "transformation": "Copied as-is",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "financial",
+    "pii_tag": "none",
+    "fairness_audit": "proxy_check",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "monthly_charges",
+    "feature_view": "customer_billing",
+    "dtype": "Float64",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "MonthlyCharges"
+    ],
+    "transformation": "CAST to DOUBLE",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "financial",
+    "pii_tag": "none",
+    "fairness_audit": "proxy_check",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "total_charges",
+    "feature_view": "customer_billing",
+    "dtype": "Float64",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "TotalCharges"
+    ],
+    "transformation": "TRIM -> NULLIF('') -> TRY_CAST DOUBLE -> COALESCE(0.0) (11 blank strings where tenure=0)",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "financial",
+    "pii_tag": "none",
+    "fairness_audit": "proxy_check",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  },
+  {
+    "feature": "avg_monthly_spend",
+    "feature_view": "customer_billing",
+    "dtype": "Float64",
+    "source_table": "raw_telco_billing",
+    "source_columns": [
+      "TotalCharges",
+      "tenure",
+      "MonthlyCharges"
+    ],
+    "transformation": "total_charges / tenure if tenure > 0 else monthly_charges",
+    "owner": "Retention-Data-Team",
+    "sensitive_tag": "financial",
+    "pii_tag": "none",
+    "fairness_audit": "proxy_check",
+    "offline_source": "billing.parquet",
+    "consumed_by": [
+      "churn_model_v1"
+    ]
+  }
+]

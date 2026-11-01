@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph SRC["Raw sources (DuckDB data/telco.duckdb)"]
+    CSV[("IBM Telco CSV<br/>public dataset")]
+    RC[("raw_telco_customer")]
+    RS[("raw_telco_services")]
+    RB[("raw_telco_billing")]
+  end
+  CSV -- "ingest_data.py<br/>split by column group" --> RC & RS & RB
+  subgraph ETL["ETL / transformation layer (DuckDB SQL)"]
+    T1["clean + CAST<br/>snapshot event_timestamp"]
+    T2["num_addon_services<br/>= count of 'Yes' add-ons"]
+    T3["total_charges: blank->0.0<br/>avg_monthly_spend = total/tenure"]
+  end
+  RC --> T1
+  RS --> T2
+  RB --> T3
+  subgraph OFF["Feast OFFLINE store (Parquet)"]
+    P1[("demographics.parquet")]
+    P2[("services.parquet")]
+    P3[("billing.parquet")]
+    PL[("labels.parquet<br/>churn @ 2025-07-01")]
+  end
+  T1 --> P1
+  T2 --> P2
+  T3 --> P3
+  RB -- "Churn column" --> PL
+  subgraph FEAST["Feast registry (data/registry.db)"]
+    FV1["customer_demographics<br/>owner: Retention-Data-Team<br/>sensitive: demographic"]
+    FV2["customer_services<br/>sensitive: none"]
+    FV3["customer_billing<br/>sensitive: financial"]
+    FS{{"FeatureService<br/>churn_model_v1"}}
+  end
+  P1 --> FV1
+  P2 --> FV2
+  P3 --> FV3
+  FV1 & FV2 & FV3 --> FS
+  ON[("Feast ONLINE store<br/>Redis (SQLite locally)")]
+  FV1 & FV2 & FV3 -- "materialize.py<br/>offline -> online" --> ON
+  FS -- "get_historical_features<br/>point-in-time join" --> TR["train_and_serve.py<br/>XGBoost churn model"]
+  PL --> TR
+  TR --> M[["Churn classifier<br/>artifacts/churn_xgb.json"]]
+  TR -- "train_features.parquet<br/>(baseline)" --> SK
+  ON -- "get_online_features<br/>low-latency" --> M
+  ON -- "live features" --> SK["skew_detection.py<br/>Skew Monitoring Service<br/>PSI / KS / chi-square / schema"]
+  SK --> AL(["PASS / WARN / FAIL<br/>alert report JSON"])
+  M --> PRED(["Churn probability<br/>to retention team"])
+  classDef sens fill:#fde2e2,stroke:#c0392b;
+  class FV1 sens;
