@@ -1,0 +1,16 @@
+
+.env
+.env.*
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Node.js dependencies
+node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# Logs
+*.log
